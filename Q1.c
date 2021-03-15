@@ -23,17 +23,17 @@ int main()
         printf("Eu P_B criei P_C!\n");
         printf("Sou P_C com PID %d, PID interno %d, filho do PID %d\n", getpid(), P_B, getppid());
         printf("Eu P_C executei: ps\n", name);
-        execl("/bin/ps", "ps", "l", NULL);
+        execl("/bin/ps", "ps", "s", NULL);
       }
       wait(NULL);
       printf("Eu P_B aguardei o P_C terminar!\n");
       printf("Eu P_B executei: ps\n", name);
-      execl("/bin/ps", "ps", "l", NULL);
+      execl("/bin/ps", "ps", "s", NULL);
     }
     wait(NULL);
     printf("Eu P_A aguardei o P_B terminar!\n");
     printf("Eu P_A executei: ps\n", name);
-    execl("/bin/ps", "ps", "l", NULL);
+    execl("/bin/ps", "ps", "s", NULL);
   }
   exit(0);
 }
